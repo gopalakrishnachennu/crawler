@@ -6,7 +6,7 @@ from utils import extract_coordinates_from_url
 def scrape_google_maps(search_for, total):
     """Scrapes Google Maps for the specified search term."""
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(args=["--no-sandbox"])
         page = browser.new_page()
 
         # Open Google Maps
